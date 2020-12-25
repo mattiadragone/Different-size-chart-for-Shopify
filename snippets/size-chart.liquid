@@ -1,0 +1,32 @@
+{%- comment -%}
+This snippets allow you to use different size chart for your product.
+You can differenciate your size chart for
+ - product.type
+ - vendor.name
+{%- endcomment -%}
+
+{% assign differentSizeChart_id = product.type %} 
+{%- comment -%} you can set here vendor.name for use different size chart for different vendor{%- endcomment -%}
+
+{% assign sizeChartSpecific = differentSizeChart_id | prepend: 'size-chart-' | handleize %}
+{%- comment -%}create logic for the match handle-product.type{%- endcomment -%}
+{% assign sizeChartSpecific_content = pages[sizeChartSpecific].content %}
+
+
+{% if sizeChartSpecific_content == blank %}
+    {% assign sizeTitle = pages.size-chart.title %}
+    {% assign sizeContent = pages.size-chart.content %}
+{% else %}
+    {% assign sizeTitle = pages[sizeChartSpecific].title %}
+    {% assign sizeContent = sizeChartSpecific_content %}
+{% endif %}
+
+{%- comment -%}
+- check if there is a specific size chart
+- if not,you see the general size chart /pages/size-chart 
+- if there is the specific size chart you see /pages/size-chart-product-type
+{%- endcomment -%}
+
+
+<h2>{{ sizeTitle }}</h2>
+<p>{{ sizeContent }}</p>
