@@ -3,11 +3,14 @@
 > Use different size chart for Shopify in product page. Differentiate your size chart for vendor or product.type
 
 ## Output
-You can see on the live store the [size chart] (https://mattia-dragone-test.myshopify.com/collections/all).
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+You can see on the live store the [size chart](https://mattia-dragone-test.myshopify.com/collections/all).
+![Recordit GIF](https://drive.google.com/uc?export=view&id=1d9CQjQxoeEBAGijZIWNNwB9NOu8bDiOy)
 
 # Indice
 - [How to](#how-to)
+  - [Create your page](##create-your-page)
+  - [Create your product](##create-your-product)
+  - [Call the popup](##call-the-popup)
 - [Option](#option)
 
 # How to
