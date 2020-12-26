@@ -2,17 +2,15 @@
 This snippets allow you to use different size chart for your product.
 You can differenciate your size chart for
  - product.type
- - vendor.name
+ - product.vendor
 {%- endcomment -%}
 {% unless product.has_only_default_variant %}
 {% assign differentSizeChart_id = product.type %} 
-{%- comment -%} you can set here vendor.name for use different size chart for different vendor{%- endcomment -%}
+{%- comment -%} you can set here product.vendor for use different size chart for different vendor{%- endcomment -%}
 
 {% assign sizeChartSpecific = differentSizeChart_id | prepend: 'size-chart-' | handleize %}
 {%- comment -%}create logic for the match handle-product.type{%- endcomment -%}
 {% assign sizeChartSpecific_content = pages[sizeChartSpecific].content %}
-
-<span id="szcrt"><a href="#">Size Chart</a></span>
 
 
 {% if sizeChartSpecific_content == blank %}
@@ -43,7 +41,7 @@ You can differenciate your size chart for
 .popup {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 11;
     left: 0;
     top: 0;
     width: 100%;

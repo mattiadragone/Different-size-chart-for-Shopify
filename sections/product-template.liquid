@@ -15,6 +15,8 @@
   {%- assign compare_at_price = current_variant.compare_at_price -%}
   {%- assign price = current_variant.price -%}
 
+
+
   {% case section.settings.media_size %}
     {% when 'small' %}
       {%- assign product_media_width = 'medium-up--one-third' -%}
@@ -141,6 +143,8 @@
             {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
           </div>
 
+          
+
           {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
             <div class="product__policies rte" data-product-policies>
               {%- if shop.taxes_included -%}
@@ -177,7 +181,10 @@
                   </div>
                 {% endfor %}
               </div>
-              {% include 'size-chart' %}
+          
+              {% unless product.has_only_default_variant %}
+                <span id="szcrt"><a href="#">Size Chart</a></span>
+              {% endunless %}
             {% endunless %}
 
             <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
